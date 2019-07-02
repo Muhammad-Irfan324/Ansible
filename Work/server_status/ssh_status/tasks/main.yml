@@ -1,0 +1,15 @@
+---
+# tasks file for ssh_status
+- name: SSH SERVICE STATUS
+  shell: service sshd status
+  args:
+    warn: false
+  register: ssh_service_status 
+  become: true
+
+
+- name: SSH SERVICE STATUS DEBUG VALUE
+  debug:
+    var: ssh_service_status
+
+

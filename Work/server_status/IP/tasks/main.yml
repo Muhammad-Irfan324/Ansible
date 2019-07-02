@@ -1,0 +1,12 @@
+---
+# tasks file for IP
+- name: Public IP
+  shell: curl ifconfig.me
+  args:
+    warn: false
+  register: ip 
+  become: true
+
+- name: Public_IP_Of_Instance
+  debug:
+    var: ip 

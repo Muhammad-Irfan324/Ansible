@@ -1,0 +1,28 @@
+---
+# tasks file for ALL-SERVICE
+- name: populate service all  
+  service_facts:
+
+- debug:
+    var: ansible_facts.services
+
+- name: populate service ssh 
+  service_facts:
+
+- debug:
+    var: ansible_facts.services['sshd']
+    #var: sshd.service
+
+
+
+- name: populate service cron 
+  service_facts:
+
+- debug:
+    var: ansible_facts.services['crond']
+
+#- name: SSH Service Fact
+ # service_facts:
+  #  gather_facts: True
+   # element: tcp_service
+   # filter: sshd

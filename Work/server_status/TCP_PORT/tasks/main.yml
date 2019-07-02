@@ -1,0 +1,11 @@
+---
+# tasks file for TCP_PORT
+- name: TCP PORT STATUS
+  shell: netstat -ntlp
+  register: TCP_PORT_status 
+  become: true
+
+
+- name: TCP PORT STATUS DEBUG VALUE
+  debug:
+    var: TCP_PORT_status

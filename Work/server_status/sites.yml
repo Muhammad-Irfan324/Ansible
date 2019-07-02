@@ -1,0 +1,10 @@
+---
+
+- hosts: Server1
+
+  roles: 
+    - ALL-SERVICE
+    - ssh_status
+    - TCP_PORT
+    - IP
+    - nginx_status

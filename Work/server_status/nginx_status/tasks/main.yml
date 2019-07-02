@@ -1,0 +1,19 @@
+---
+# tasks file for nginx_status
+- name: NGINX SERVICE STATUS
+  shell: /etc/init.d/nginx status
+  register: nginx_service_status 
+  become: true
+
+- name: NGINX SERVICE STATUS DEBUG VALUE
+  debug:
+    var: nginx_service_status
+
+- name: NGINX SYNTAX
+  shell: nginx -t
+  register: syntax 
+  become: true
+
+- name: NGINX SYNTAX STATUS DEBUG VALUE
+  debug:
+    var: syntax
